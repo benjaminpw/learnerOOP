@@ -26,10 +26,26 @@ class ViewController: UIViewController {
         updateUI()
     }
     func updateUI() {
-        learnerNameLabel.text = learnerInstance?.name
-        learnerAgeLabel.text = "\(learnerInstance?.age)"
-        learnerGenderLabel.text = learnerInstance?.gender
+        if let instance = learnerInstance {
+            learnerNameLabel.text = instance.name
+            learnerAgeLabel.text = "\(instance.age)"
+            learnerGenderLabel.text = instance.gender
+        }
+        
     }
 
+    @IBAction func increaseAgeButtonClicker(_ sender: UIButton) {
+        if let instance = learnerInstance {
+            instance.increaseAge()
+            updateUI()
+        }
+        
+    }
+    @IBAction func decreaseAgeButtonClicker(_ sender: UIButton) {
+        if let instance = learnerInstance {
+            instance.decreaseAge()
+            updateUI()
+        }
+    }
 }
 

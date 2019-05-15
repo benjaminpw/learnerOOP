@@ -19,6 +19,13 @@ class LearnerModel {
         self.age = ageLearner
         self.gender = genderLearner
         self.imageProfile = imageProfileLearner
-        
     }
-}
+    
+    func increaseAge() {
+        self.age += 1
+    }
+    func decreaseAge() {
+        self.age -= 1
+    }
+    }
+
