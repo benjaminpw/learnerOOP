@@ -17,16 +17,18 @@ class ViewController: UIViewController {
     @IBOutlet weak var learnerGenderLabel: UILabel!
     
     var learnerInstance: LearnerModel?
+    var facilitatorInstance: facilitatorModel?
     //you just create copy of your learnerModel
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         learnerInstance = LearnerModel(nameLearner: "benj", ageLearner: 19, genderLearner: "male", imageProfileLearner: "")
+        facilitatorInstance = facilitatorModel (facilName: "benjo", facilAge: 22, facilGender: "male", facilImageProfile: "", facilPerk: "unlimited internet")
         updateUI()
     }
     func updateUI() {
-        if let instance = learnerInstance {
+        if let instance = facilitatorInstance {
             learnerNameLabel.text = instance.name
             learnerAgeLabel.text = "\(instance.age)"
             learnerGenderLabel.text = instance.gender
@@ -35,7 +37,7 @@ class ViewController: UIViewController {
     }
 
     @IBAction func increaseAgeButtonClicker(_ sender: UIButton) {
-        if let instance = learnerInstance {
+        if let instance = facilitatorInstance {
             instance.increaseAge()
             updateUI()
         }
